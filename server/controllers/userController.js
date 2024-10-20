@@ -3,7 +3,6 @@ const asyncHandler = require("express-async-handler");
 const bcrypt = require("bcryptjs");
 // const Expense = require('../models/expenseModel');
 const { User, Expense } = require("../models/userModel");
-const redisClient = require("../utils/redisClient"); // Adjust the path if needed
 const jwt = require("jsonwebtoken");
 const validator = require("validator");
 const nodemailer = require('nodemailer');
