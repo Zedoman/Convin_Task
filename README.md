@@ -50,7 +50,7 @@ Percentage: Splits the expense based on specified percentages for each participa
 
 # API Endpoints
 To register user
-http://localhost:5001/api/users/register
+http://localhost:5001/api/users/register <br>
 [json format: {
   "name": "Surjo",
   "email": "avradeepni@gmail.com",
@@ -61,7 +61,7 @@ To get User details
 http://localhost:5001/api/users/id/:userId
 
 Add Expense
-http://localhost:5001/api/users/expenses
+http://localhost:5001/api/users/expenses <br>
 [Json Format: // {
 //   "userEmail": "avradeepri@gmail.com",  // Your user ID
 //   "amount": 3000,
@@ -126,6 +126,6 @@ http://localhost:5001/api/users/expenses/balance-sheet
 
 
 # Error Handling
-400 Bad Request: When required fields are missing or the input is invalid.
-404 Not Found: When a user or participant is not found in the database.
-500 Internal Server Error: When something goes wrong on the server (e.g., database connection issues).
+1. 400 Bad Request: When required fields are missing or the input is invalid.
+2. 404 Not Found: When a user or participant is not found in the database.
+3. 500 Internal Server Error: When something goes wrong on the server (e.g., database connection issues).
