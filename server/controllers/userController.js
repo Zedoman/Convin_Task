@@ -227,8 +227,8 @@ const sendEmailsToParticipants = async (participants, amount, description, parti
   const transporter = nodemailer.createTransport({
     service: 'gmail', // Replace with your email service (e.g., Gmail, SendGrid, etc.)
     auth: {
-      user: process.env.EMAIL_USER, // Your email
-      pass: process.env.EMAIL_PASS, // Your email password or app-specific password
+      user: process.env.EMAIL_ADDRESS, // Your email
+      pass: process.env.EMAIL_PASSWORD, // Your email password or app-specific password
     },
   });
 
@@ -238,7 +238,7 @@ const sendEmailsToParticipants = async (participants, amount, description, parti
     const participantDetail = participantDetails.find(p => p.participant.toString() === participant._id.toString());
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: process.env.EMAIL_ADDRESS,
       to: participant.email,
       subject: 'Expense Participation Notification',
       text: `Hi ${participant.name},\n\nYou have been added to an expense: "${description}".\nYour share of the amount is: ${participantDetail.share}.\n\nThank you!`,
@@ -247,6 +247,8 @@ const sendEmailsToParticipants = async (participants, amount, description, parti
     await transporter.sendMail(mailOptions);
   }
 };
+
+
 // Retrieve Individual User Expenses (by email or ID)
 exports.getUserExpenses = async (req, res) => {
   try {
@@ -394,9 +396,6 @@ const downloadBalanceSheet = async (req, res) => {
 
 module.exports = {
   registerUser,
-  loginUser,
-  getCurrentUser,
-  logoutUser,
   addExpense,
   getUserExpenses,
   getOverallExpenses,
