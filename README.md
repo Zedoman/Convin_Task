@@ -49,7 +49,7 @@ Percentage: Splits the expense based on specified percentages for each participa
 
 
 # API Endpoints
-To register user
+1. To register user: 
 http://localhost:5001/api/users/register <br>
 [json format: {
   "name": "Surjo",
@@ -57,10 +57,10 @@ http://localhost:5001/api/users/register <br>
   "password": "hashed_password",
   "PhoneNumber": "+919733057338"}.. more we can add as required]
 
-To get User details
+2. To get User details: 
 http://localhost:5001/api/users/id/:userId
 
-Add Expense
+3. Add Expense: 
 http://localhost:5001/api/users/expenses <br>
 [Json Format: // {
 //   "userEmail": "avradeepri@gmail.com",  // Your user ID
@@ -115,13 +115,13 @@ http://localhost:5001/api/users/expenses <br>
 
 ]
 
-Get individual user expenses
+4. Get individual user expenses: 
 http://localhost:5001/api/users/expenses/user/:userId
 
-Get overall expenses
+5. Get overall expenses:
 http://localhost:5001/api/users/expenses/summary
 
-Download balance sheet
+6. Download balance sheet: 
 http://localhost:5001/api/users/expenses/balance-sheet
 
 
